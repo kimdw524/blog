@@ -6095,9 +6095,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"blog@workspace:packages/blog":
+"blog-next@workspace:packages/blog-next":
   version: 0.0.0-use.local
-  resolution: "blog@workspace:packages/blog"
+  resolution: "blog-next@workspace:packages/blog-next"
   dependencies:
     "@kimdw524/dds": "workspace:^"
     "@kimdw524/utils": "workspace:^"

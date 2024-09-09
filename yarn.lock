@@ -6146,6 +6146,8 @@ __metadata:
     "@types/react": "npm:^18.0.0"
     "@types/react-dom": "npm:^18.0.0"
     "@types/webpack-bundle-analyzer": "npm:^4"
+    "@vanilla-extract/css": "npm:^1.15.5"
+    "@vanilla-extract/webpack-plugin": "npm:^2.3.13"
     babel-jest: "npm:^27.4.2"
     babel-loader: "npm:^8.2.3"
     babel-plugin-named-asset-import: "npm:^0.3.8"

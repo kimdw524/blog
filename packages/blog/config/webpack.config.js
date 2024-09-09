@@ -31,6 +31,8 @@ const createEnvironmentHash = require('./webpack/persistentCache/createEnvironme
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin');
+
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 
@@ -752,6 +754,7 @@ module.exports = function (webpackEnv) {
           },
         }),
       new BundleAnalyzerPlugin(),
+      new VanillaExtractPlugin(),
     ].filter(Boolean),
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter

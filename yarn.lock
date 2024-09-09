@@ -6139,6 +6139,7 @@ __metadata:
   resolution: "blog@workspace:packages/blog"
   dependencies:
     "@babel/core": "npm:^7.16.0"
+    "@kimdw524/dds": "workspace:^"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.5.3"
     "@svgr/webpack": "npm:^5.5.0"
     "@types/jest": "npm:^27.0.1"

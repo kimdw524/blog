@@ -345,6 +345,13 @@ module.exports = function (webpackEnv) {
     module: {
       strictExportPresence: true,
       rules: [
+        {
+          test: /\.(js|jsx|ts|tsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: require.resolve('babel-loader'),
+          },
+        },
         // Handle node_modules packages that contain sourcemaps
         shouldUseSourceMap && {
           enforce: 'pre',
@@ -753,7 +760,7 @@ module.exports = function (webpackEnv) {
             },
           },
         }),
-      new BundleAnalyzerPlugin(),
+      // new BundleAnalyzerPlugin(),
       new VanillaExtractPlugin(),
     ].filter(Boolean),
     // Turn off performance processing because we utilize

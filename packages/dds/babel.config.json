@@ -1,0 +1,7 @@
+{
+  "presets": [
+    ["@babel/env", { "shippedProposals": true }],
+    ["@babel/react", { "runtime": "automatic" }],
+    ["@babel/typescript", { "onlyRemoveTypeImports": true }]
+  ]
+}

@@ -3,6 +3,7 @@ import { style } from '@vanilla-extract/css';
 export const navbar = style({
   display: 'flex',
   alignItems: 'center',
-  gap: '2rem',
+  justifyContent: 'space-between',
+  height: '2.5rem',
   padding: '1.25rem',
 });

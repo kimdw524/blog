@@ -4,24 +4,21 @@ import Navbar from '../common/Navbar';
 
 import Nav from '../common/Nav';
 
-import { Button } from '@kimdw524/dds';
+import { lightTheme } from '@kimdw524/dds';
 
 const Layout = () => {
   return (
-    <>
+    <div className={lightTheme}>
       <Navbar>
-        <Navbar.Logo>kimdw524's blog</Navbar.Logo>
+        <Navbar.Logo>LOGO</Navbar.Logo>
         <Nav>
           <Nav.Item>Posts</Nav.Item>
           <Nav.Item>About me</Nav.Item>
-          <Nav.Item>
-            Github
-            <Button>asd</Button>
-          </Nav.Item>
+          <Nav.Item>Github</Nav.Item>
         </Nav>
       </Navbar>
       <Outlet />
-    </>
+    </div>
   );
 };
 

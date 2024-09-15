@@ -1,4 +1,4 @@
-import { colorPalette, theme } from '@kimdw524/dds';
+import { breakpoints, colorPalette, theme } from '@kimdw524/dds';
 
 import { style } from '@vanilla-extract/css';
 
@@ -9,11 +9,31 @@ export const item = style({
   fontSize: '1rem',
   fontWeight: 'normal',
   whiteSpace: 'nowrap',
-  transition: 'all 0.3s ease',
+  transition: 'background-color 0.3s ease, color 0.3s ease',
   cursor: 'pointer',
   userSelect: 'none',
-  ':hover': {
-    backgroundColor: colorPalette.grey[200],
+
+  ':active': {
+    backgroundColor: colorPalette.blueGrey[200],
     color: theme.color.text.primary,
+  },
+
+  '@media': {
+    [`(hover: hover) and (pointer: fine)`]: {
+      ':hover': {
+        backgroundColor: colorPalette.grey[200],
+        color: theme.color.text.primary,
+      },
+
+      ':active': {
+        backgroundColor: colorPalette.blueGrey[200],
+        color: theme.color.text.primary,
+      },
+    },
+
+    [`screen and (max-width: ${breakpoints.sm})`]: {
+      padding: '1rem',
+      borderRadius: '0',
+    },
   },
 });

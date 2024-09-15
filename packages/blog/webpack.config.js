@@ -21,6 +21,9 @@ module.exports = (env, argv) => {
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+      },
     },
     module: {
       rules: [
@@ -44,10 +47,6 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(png|jpeg|jpg|svg|woff2)$/,
-          type: 'asset/resource',
-        },
-        {
           test: /\.vanilla\.css$/i,
           use: [
             MiniCssExtractPlugin.loader,
@@ -58,6 +57,20 @@ module.exports = (env, argv) => {
               },
             },
           ],
+        },
+        {
+          test: /\.(png|jpeg|jpg|svg|)$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'assets/images/[name][hash][ext][query]',
+          },
+        },
+        {
+          test: /\.(woff|woff2|)$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'assets/fonts/[name][hash][ext][query]',
+          },
         },
       ],
     },
@@ -74,7 +87,7 @@ module.exports = (env, argv) => {
       }),
       new VanillaExtractPlugin(),
       new MiniCssExtractPlugin(),
-      //new BundleAnalyzerPlugin(),
+      // new BundleAnalyzerPlugin(),
     ],
     devtool: isProduction ? 'nosources-source-map' : 'eval',
     devServer: {

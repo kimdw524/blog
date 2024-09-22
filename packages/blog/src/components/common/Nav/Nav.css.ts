@@ -35,6 +35,8 @@ export const overlay = style({
       display: 'none',
       position: 'fixed',
       inset: '0 0 0 0',
+      width: '100vw',
+      height: '100vh',
       backgroundColor: 'rgba(0, 0, 0, 0.33)',
       animation: `${fadeIn} 0.2s ease 1`,
       zIndex: '100',
@@ -69,7 +71,7 @@ export const nav = style({
     [`screen and (max-width: ${breakpoints.sm})`]: {
       [`.${normal}`]: {
         display: 'block',
-        position: 'fixed',
+        position: 'absolute',
         top: '0',
         right: '0',
         width: '15rem',

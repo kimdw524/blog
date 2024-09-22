@@ -5,6 +5,7 @@ import { mergeClass } from '@/utils/mergeClass';
 import { Bars3Icon } from '@heroicons/react/24/solid';
 
 import * as s from './Nav.css';
+import { preventScroll } from '@/app.css';
 
 interface NavProps {
   children: ReactNode;
@@ -13,26 +14,29 @@ interface NavProps {
 const Nav = ({ children }: NavProps) => {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
-  const handleMenuClick = () => {
-    setIsCollapsed(true);
-  };
+  const toggleMenu = (showMenu: boolean) => {
+    setIsCollapsed(showMenu);
 
-  const handleOverlayClick = () => {
-    setIsCollapsed(false);
+    if (showMenu) {
+      document.body.classList.add(preventScroll);
+      return;
+    }
+
+    document.body.classList.remove(preventScroll);
   };
 
   return (
-    <nav className={s.nav}>
+    <nav className={mergeClass(s.nav)}>
       <div
         className={mergeClass(s.overlay, isCollapsed && s.collapsed)}
-        onClick={handleOverlayClick}
+        onClick={() => toggleMenu(false)}
       >
         <div className={s.normal} onClick={(e) => e.stopPropagation()}>
           {children}
         </div>
       </div>
       <div className={s.compact}>
-        <button className={s.hamburger} onClick={handleMenuClick}>
+        <button className={s.hamburger} onClick={() => toggleMenu(true)}>
           <Bars3Icon style={{ width: '1.5rem', height: '1.5rem' }} />
         </button>
       </div>

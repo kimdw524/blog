@@ -1,4 +1,8 @@
-import { globalStyle } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
+
+export const preventScroll = style({
+  overflowY: 'hidden',
+});
 
 globalStyle('body', {
   overflowX: 'hidden',

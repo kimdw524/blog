@@ -17,7 +17,9 @@ const Layout = () => {
           <Nav.Item>Github</Nav.Item>
         </Nav>
       </Navbar>
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 };

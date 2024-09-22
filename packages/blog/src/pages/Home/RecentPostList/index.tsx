@@ -15,6 +15,7 @@ const RecentPostList = () => {
           width="320px"
           content={post.content}
           date={post.createdAt}
+          tags={post.tags}
         />
       ))}
     </PostList>

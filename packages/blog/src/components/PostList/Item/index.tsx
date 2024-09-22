@@ -1,7 +1,10 @@
+import * as s from './Item.css';
+
 import { formatDate } from '@/utils/formateDate';
+
 import Image from '../../common/Image';
 
-import * as s from './Item.css';
+import Tag from './Tag';
 
 interface ItemProps extends React.ComponentProps<'div'> {
   thumbnail: string;
@@ -9,6 +12,7 @@ interface ItemProps extends React.ComponentProps<'div'> {
   content: string;
   date: string;
   width: string;
+  tags: string[];
 }
 
 const Item = ({
@@ -17,6 +21,7 @@ const Item = ({
   content,
   date,
   width,
+  tags,
   ...rest
 }: ItemProps) => {
   return (
@@ -32,6 +37,7 @@ const Item = ({
       <div className={s.title}>{title}</div>
       <div className={s.content}>{content}</div>
       <div className={s.date}>{formatDate(date)}</div>
+      <Tag tags={tags} />
     </div>
   );
 };

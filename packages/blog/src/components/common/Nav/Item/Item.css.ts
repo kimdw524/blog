@@ -14,7 +14,7 @@ export const item = style({
   userSelect: 'none',
 
   ':active': {
-    backgroundColor: colorPalette.blueGrey[200],
+    backgroundColor: colorPalette.grey[200],
     color: theme.color.text.primary,
   },
 
@@ -26,13 +26,14 @@ export const item = style({
       },
 
       ':active': {
-        backgroundColor: colorPalette.blueGrey[200],
+        backgroundColor: colorPalette.grey[200],
         color: theme.color.text.primary,
       },
     },
 
     [`screen and (max-width: ${breakpoints.sm})`]: {
       padding: '1rem',
+      borderBottom: `0.0625rem solid ${colorPalette.grey[200]}`,
       borderRadius: '0',
     },
   },

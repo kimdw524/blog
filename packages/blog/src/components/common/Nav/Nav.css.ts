@@ -26,6 +26,7 @@ const swipe = keyframes({
 
 export const normal = style({
   display: 'flex',
+  alignItems: 'center',
   flexDirection: 'row',
 });
 

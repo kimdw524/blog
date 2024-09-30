@@ -4,12 +4,10 @@ import theme, { type Palette } from '../../styles/theme.css';
 
 export const button = recipe({
   base: {
-    padding: '0.75rem',
     border: 0,
     borderRadius: '0.25rem',
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
-    lineHeight: 0,
     cursor: 'pointer',
     transition: 'all 0.1s ease',
     userSelect: 'none',

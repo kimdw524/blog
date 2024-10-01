@@ -2,23 +2,15 @@ import React, { useEffect, useRef } from 'react';
 
 import { ModalData } from '.';
 
-import styles from './Modal.module.css';
-
 type ModalProps = ModalData;
 
 const Modal = ({
   children,
   state,
-  animation = 'center',
+  animation,
   onFadeOutEnd,
-}: ModalProps) => {
+}: Required<ModalProps>) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
-
-  const classNames = {
-    base: styles[`${animation}-base`],
-    enter: styles[`${animation}-enter`],
-    exit: styles[`${animation}-exit`],
-  };
 
   useEffect(() => {
     if (!wrapperRef.current) {
@@ -26,14 +18,15 @@ const Modal = ({
     }
 
     if (state === 'ACTIVE') {
-      wrapperRef.current.className = classNames.base;
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      wrapperRef.current.offsetTop;
-      wrapperRef.current.classList.add(classNames.enter);
+      wrapperRef.current.className = animation.base;
+
+      requestAnimationFrame(() =>
+        wrapperRef.current?.classList.add(animation.enter)
+      );
       return;
     }
 
-    wrapperRef.current.className = `${classNames.base} ${classNames.exit}`;
+    wrapperRef.current.className = `${animation.base} ${animation.exit}`;
   }, [state, animation, wrapperRef]);
 
   const handleTransitionEnd = (e: React.TransitionEvent) => {

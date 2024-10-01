@@ -13,11 +13,15 @@ import ModalList, { ModalListRef } from './ModalList';
 
 type ModalState = 'ACTIVE' | 'FADEOUT';
 
-export type ModalAnimation = 'center' | 'bottom' | 'alert';
+export interface ModalAmationClassNames {
+  base: string;
+  enter: string;
+  exit: string;
+}
 
 export interface ModalPushProps {
   children: ReactElement;
-  animation?: ModalAnimation;
+  animation?: ModalAmationClassNames;
   onClose?: () => void;
 }
 
@@ -36,7 +40,15 @@ export const ModalContext = createContext<ModalContextType | undefined>(
   undefined
 );
 
-export const ModalProvider = ({ children }: { children: ReactNode }) => {
+interface ModalProviderProps {
+  children: ReactNode;
+  defaultAnimation: ModalAmationClassNames;
+}
+
+export const ModalProvider = ({
+  children,
+  defaultAnimation,
+}: ModalProviderProps) => {
   const modalListRef = useRef<ModalListRef>(null);
 
   const push = useCallback(
@@ -45,7 +57,10 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
         return;
       }
 
-      modalListRef.current.push(data);
+      modalListRef.current.push({
+        ...data,
+        animation: data.animation ?? defaultAnimation,
+      });
     },
     [modalListRef]
   );

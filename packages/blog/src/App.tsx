@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import './app.css';
 import './styles/fonts.css';
+import './styles/reset.css';
 import { modalCenter } from './styles/modal.css';
 
 import Home from './pages/Home';

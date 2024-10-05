@@ -17,7 +17,7 @@ export const modalCenter: ModalAmationClassNames = {
 
     [`> ${'div'}`]: {
       opacity: '0',
-      transform: 'translateY(4rem)',
+      transform: 'translateY(4rem) scale(0.9)',
     },
   }),
 
@@ -28,7 +28,7 @@ export const modalCenter: ModalAmationClassNames = {
     [`> ${'div'}`]: {
       opacity: '1',
       transition: 'all 0.3s ease',
-      transform: '0',
+      transform: 'translateY(0) scale(1)',
     },
   }),
 
@@ -40,7 +40,7 @@ export const modalCenter: ModalAmationClassNames = {
     [`> ${'div'}`]: {
       opacity: '0',
       transition: 'all 0.3s ease',
-      transform: 'translateY(4rem)',
+      transform: 'translateY(4rem) scale(0.9)',
     },
   }),
 };

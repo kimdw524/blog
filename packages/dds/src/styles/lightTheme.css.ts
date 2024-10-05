@@ -41,7 +41,10 @@ export default createTheme(themeContract, {
       secondary: colorPalette.blueGrey['200'],
       disabled: colorPalette.blueGrey['100'],
     },
-    background: '#fff',
+    background: {
+      primary: '#fff',
+      secondary: colorPalette.blueGrey[50],
+    },
     text: {
       primary: '#000',
       secondary: colorPalette.blueGrey['700'],

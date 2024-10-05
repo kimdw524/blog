@@ -37,7 +37,10 @@ const themeContract = {
       secondary: null,
       disabled: null,
     },
-    background: null,
+    background: {
+      primary: null,
+      secondary: null,
+    },
     text: {
       primary: null,
       secondary: null,

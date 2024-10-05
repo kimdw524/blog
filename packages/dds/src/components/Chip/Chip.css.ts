@@ -61,7 +61,7 @@ export const chip = recipe({
       },
       outlined: {
         boxShadow: `inset 0 0 0 0.0625rem ${colorVar.main}`,
-        backgroundColor: theme.color.background,
+        backgroundColor: theme.color.background.primary,
         color: colorVar.main,
 
         '&.click:not(.disabled)': {

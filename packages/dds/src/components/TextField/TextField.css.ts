@@ -37,7 +37,7 @@ export const container = recipe({
     variant: {
       outlined: {
         boxShadow: `inset 0 0 0 0.0625rem ${theme.color.border.secondary}`,
-        backgroundColor: theme.color.background,
+        backgroundColor: theme.color.background.primary,
 
         '&:has(:disabled)': {
           boxShadow: `inset 0 0 0 0.0625rem ${theme.color.border.disabled}`,

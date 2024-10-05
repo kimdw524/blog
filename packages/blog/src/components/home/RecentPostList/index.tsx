@@ -1,6 +1,6 @@
-import PostList from '@/components/PostList';
-
 import useRecentPostList from '@/hooks/useRecentPostList';
+
+import PostList from '@/components/common/PostList';
 
 const RecentPostList = () => {
   const { data } = useRecentPostList(1);

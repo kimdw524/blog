@@ -2,9 +2,8 @@ import * as s from './Item.css';
 
 import { formatDate } from '@/utils/formateDate';
 
-import Image from '../../common/Image';
-
-import Tag from './Tag';
+import Image from '@/components/common/Image';
+import Tag from '@/components/common/Tag';
 
 interface ItemProps extends React.ComponentProps<'div'> {
   thumbnail: string;

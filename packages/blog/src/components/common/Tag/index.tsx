@@ -7,8 +7,10 @@ interface TagProps {
 const Tag = ({ tags }: TagProps) => {
   return (
     <div className={s.container}>
-      {tags.map((tag) => (
-        <span className={s.tag}>{tag}</span>
+      {tags.map((tag, index) => (
+        <span className={s.tag} key={index}>
+          {tag}
+        </span>
       ))}
     </div>
   );

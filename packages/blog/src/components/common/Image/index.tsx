@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-import useIsInViewport from '@/hooks/useIsInViewport';
+import useIsInViewport from '@kimdw524/utils/useIsInViewport';
 
 import { mergeClass } from '@/utils/mergeClass';
 

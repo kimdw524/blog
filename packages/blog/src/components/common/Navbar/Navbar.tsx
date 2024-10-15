@@ -2,7 +2,7 @@ import { ReactNode, useRef } from 'react';
 
 import * as s from './Navbar.css';
 
-import useIsScrolled from '@/hooks/useIsScrolled';
+import useIsScrolled from '@kimdw524/utils/useIsScrolled';
 
 import { mergeClass } from '@/utils/mergeClass';
 

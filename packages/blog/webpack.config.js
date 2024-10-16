@@ -89,7 +89,6 @@ module.exports = (env, argv) => {
       new MiniCssExtractPlugin(),
       // new BundleAnalyzerPlugin(),
     ],
-    devtool: isProduction ? 'nosources-source-map' : 'eval',
     devServer: {
       historyApiFallback: true,
       port: 3000,

@@ -6554,6 +6554,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "blog-next@workspace:packages/blog-next"
   dependencies:
+    "@heroicons/react": "npm:^2.1.5"
     "@kimdw524/dds": "workspace:^"
     "@kimdw524/utils": "workspace:^"
     "@next/bundle-analyzer": "npm:^14.2.8"

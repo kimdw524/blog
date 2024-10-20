@@ -3,7 +3,14 @@ import NextBundleAnalyzer from '@next/bundle-analyzer';
 const withVanillaExtract = createVanillaExtractPlugin();
 
 /** @type {import('next').NextConfig} */
-const nextConfig = { transpilePackages: ['@kimdw524/dds'] };
+const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  transpilePackages: ['@kimdw524/dds'],
+};
 
 const withBundleAnalyzer = NextBundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',

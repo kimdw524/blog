@@ -1,6 +1,6 @@
 import { breakpoints, colorPalette, theme } from '@kimdw524/dds';
 
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 
 export const item = style({
   padding: '0.5rem 0.75rem',
@@ -37,4 +37,9 @@ export const item = style({
       borderRadius: '0',
     },
   },
+});
+
+globalStyle(`${item} > a`, {
+  color: 'inherit',
+  textDecoration: 'none',
 });

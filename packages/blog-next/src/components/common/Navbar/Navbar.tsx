@@ -6,7 +6,7 @@ import * as s from './Navbar.css';
 
 import useIsScrolled from '@kimdw524/utils/useIsScrolled';
 
-import { mergeClass } from '@/utils/mergeClass';
+import { mergeClasses } from '@/utils/mergeClasses';
 
 interface NavbarProps {
   children: ReactNode;
@@ -20,7 +20,7 @@ const Navbar = ({ children }: NavbarProps) => {
   return (
     <header
       ref={headerRef}
-      className={mergeClass(s.navbar, isScrolled && s.scrolled)}
+      className={mergeClasses(s.navbar, isScrolled && s.scrolled)}
     >
       {children}
     </header>

@@ -2,7 +2,7 @@
 
 import { ReactNode, useState } from 'react';
 
-import { mergeClass } from '@/utils/mergeClass';
+import { mergeClasses } from '@/utils/mergeClasses';
 
 import { Bars3Icon } from '@heroicons/react/24/solid';
 
@@ -16,6 +16,8 @@ interface NavProps {
 const Nav = ({ children }: NavProps) => {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
+  console.log(isCollapsed);
+
   const toggleMenu = (showMenu: boolean) => {
     setIsCollapsed(showMenu);
 
@@ -28,9 +30,9 @@ const Nav = ({ children }: NavProps) => {
   };
 
   return (
-    <nav className={mergeClass(s.nav)}>
+    <nav className={s.nav}>
       <div
-        className={mergeClass(s.overlay, isCollapsed && s.collapsed)}
+        className={mergeClasses(s.overlay, isCollapsed && s.collapsed)}
         onClick={() => toggleMenu(false)}
       >
         <div className={s.normal} onClick={(e) => e.stopPropagation()}>
